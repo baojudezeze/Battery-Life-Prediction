@@ -11,25 +11,25 @@ While lithium batteries provide high efficiency and low cost, accurately predict
 The degradation process of batteries involves intricate thermoelectric coupling, making it challenging to directly measure the battery life situation. Instead, a common approach is to assess the cycle life and RUL by analyzing the voltage, current, and temperature curves obtained during charging and discharging cycles. In contrast to conventional feature-based methods, this section introduces a approach that generates input data from the charging and discharging processes separately. By combining the strengths of machine learning, this method automatically extracts features while also allowing for manual feature selection. This comprehensive approach aims to provide a more detailed description of battery degradation between different cycles.
 
 ### Recurrence Plots-VIT heatmaps in different cycles
-![Example](./images/picture2.png)
+![Example](./images/Picture2.png)
 
-(a)~(d) the voltage RP heatmap in 10, 150, 300 and 450 charging cycles; (e)~(h) the current RP heatmap in 10, 150, 300 and 450 charging cycles; (i)~(m) the temperature RP heatmap in 10, 150, 300 and 450 charging cycles.
+(a)-(d) the voltage RP heatmap in 10, 150, 300 and 450 charging cycles; (e)-(h) the current RP heatmap in 10, 150, 300 and 450 charging cycles; (i)-(m) the temperature RP heatmap in 10, 150, 300 and 450 charging cycles.
 
 ### Feature extraction based on discharging process
-![Example](./images/picture3.png)
+![Example](./images/Picture3.png)
 
 (a) Q-V curves of the battery under different cycles; (b) incremental capacity curves of the battery under different cycles; (c)  curves of 7 cells based on discharging process; (d) EMD-ΔQ(V) curves of 7 cells for the first 100 cycles; (e) EMD-IC curves of 7 cells based on the whole cycle life.
 
 ### Depthwise Separable 3D Convolutional Network Model Fusing Channel Attention (DS-3DCA-CNN)
 The method to predict cycle life and RUL of the battery is introduced in detail. Firstly, the construction of Depthwise Separable 3D Convolutional Network Model Fusing Channel Attention is described step by step. Secondly, the cycle life and RUL prediction method based on charging and discharging features are introduced.
 
-![Example](./images/picture4.png)
-![Example](./images/picture5.png)
+![Example](./images/Picture4.png)
+![Example](./images/Picture5.png)
 
 Structure of proposed DS-3DCA-CNN. Here, the feature vector of lithium battery in the charging process is extracted through several steps: time series imaging, depthwise separable convolution, charging channel attention and perceptron.
 
 ### Model construction combining cycle life and RUL prediction of the battery
-![Example](./images/picture1.png)
+![Example](./images/Picture1.png)
 
 The flow of lithium battery cycle life and RUL prediction process fusing charging and discharging features.
 
@@ -37,12 +37,12 @@ The flow of lithium battery cycle life and RUL prediction process fusing chargin
 To verify the effectiveness of the early prediction of the proposed model, a combination of different sizes of   and   are selected as the window  
 cycle to test the model performance after completing the model training. Note that   represents the first n charging and discharging cycles of the battery, and   represents the most recent m cycles.
 
-![Example](./images/picture6.png)
+![Example](./images/Picture6.png)
 
 Results of early cycle life prediction of lithium battery: (a) Results for Dataset1; (b) Results for Dataset2.
 
 ### Ablation study on time-series imaging method
-![Example](./images/picture7.png)
+![Example](./images/Picture7.png)
 
 As can be seen from the figure that after transforming the original data into RP, GASF, GADF and MTF, their comprehensive error calculation results are close, while directly using the original data does not work as well. The Recurrence Plot reflects the image of the distance between the trajectories extracted from the original time-series, which can reflect the distance change between any two sampling points at different times during the charging process of the VIT data. GAF reflects the transformation between the Angle and/difference between different points in polar coordinates when the original time-series is transformed. MTF grids the data matrix and then replaces the subplots in each grid with the mean. The similarity of these methods is that they all can represent the change between any two sampling points.
 
@@ -104,11 +104,11 @@ python 相关性系数.py
 
 ## Example results
 
-![Example](./images/picture8.png)
+![Example](./images/Picture8.png)
 
 MAE, MSE and MSLE of experimental results on two datasets.
 
-![Example](./images/picture9.png)
+![Example](./images/Picture9.png)
 
 Boxplots of the error bounds.
 
